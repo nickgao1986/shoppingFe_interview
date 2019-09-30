@@ -1,7 +1,13 @@
 module.exports={
-    entry:'./src/page/index/index.js',
+    entry:{
+        'index': ['./src/page/index/index.js'],
+        'login': ['./src/page/login/index.js'],
+    },
     output:{
         path:'./dist',
-        filename:'app.js'
+        filename:'js/[name].js'
+    },
+    externals:{
+        'jquery':'window.jQuery'
     }
 }
