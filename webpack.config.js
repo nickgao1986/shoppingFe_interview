@@ -1,5 +1,18 @@
 var webpack             = require('webpack');
 var ExtractTextPlugin   = require('extract-text-webpack-plugin');
+var HtmlWebpackPlugin   = require('html-webpack-plugin');
+
+var getHtmlConfig = function(name, title){
+    return {
+        template    : './src/view/' + name + '.html',
+        filename    : 'view/' + name + '.html',
+        title       : title,
+        inject      : true,
+        hash        : true,
+        chunks      : ['common', name]
+    };
+};
+
 module.exports={
     entry:{
         'common': ['./src/page/common/index.js'],
@@ -26,5 +39,8 @@ module.exports={
         }),
         // 把css单独打包到文件里
         new ExtractTextPlugin("css/[name].css"),
+        // html 加载
+        new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
+        new HtmlWebpackPlugin(getHtmlConfig('login', '登录页')),
     ]
 }
