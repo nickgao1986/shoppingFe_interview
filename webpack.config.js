@@ -21,6 +21,7 @@ var config = {
         'common': ['./src/page/common/index.js'],
         'index': ['./src/page/index/index.js'],
         'login': ['./src/page/login/index.js'],
+        'user-login'        : ['./src/page/user-login/index.js']
     },
     output: {
         path: './dist',
@@ -57,6 +58,7 @@ var config = {
         // html 加载
         new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
         new HtmlWebpackPlugin(getHtmlConfig('login', '登录页')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-login', '用户登录'))
     ]
 }
 
