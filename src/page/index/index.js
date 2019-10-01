@@ -5,5 +5,15 @@
 
 'use strict'
 
+var _mm             = require('util/mm.js');
+
 require('../module.js');
-console.log("index");
+_mm.request({
+    url:'./test.do',
+    success:function (res) {
+        console.log("res="+res);
+    },
+    error:function (res) {
+        console.log("res="+res);
+    }
+})
