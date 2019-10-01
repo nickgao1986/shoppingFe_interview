@@ -5,4 +5,6 @@
 'use strict'
 require('./index.css')
 require('../module.js');
+require('./footer/index.css');
+require('page/common/nav/index.js');
 console.log("common");

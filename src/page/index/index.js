@@ -6,8 +6,9 @@
 'use strict'
 
 var _mm             = require('util/mm.js');
-
+require('./index.css');
 require('../module.js');
+require('page/common/head/index.js');
 _mm.request({
     url:'./test.do',
     success:function (res) {
